@@ -207,50 +207,62 @@ label {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        height: auto;
-        padding: 0.5rem;
+@media (max-width: 768px){
+
+    body {
+      padding: 10px;
     }
 
-    .graphic-container {
-        grid-column: 1;
-        grid-row: 1;
+    .logo-banner {
+      width: 150px;
+    }
+
+    a {
+      font-size: 1em;
+    }
+
+    .container {
+      margin-top: 90px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 400px auto 250px;
+      height: 900px;
+      
+    }
+
+    .graphic-container{
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 250px;
+      height: auto;
+      grid-row:1;
+    }
+
+    .divisor{
+      height:0;
+    }
+
+    .text-container {
+      grid-row: 1;
+      height: 50px;
+      margin-bottom: 1em;
+    }
+
+    .graph {
+      margin-top: 2em;
+      grid-row: 2;
+      height: 250px;
     }
 
     .habit-checklist {
-        grid-column: 1;
-        grid-row: 2;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .habit-item {
-        width: 45%;
-        height: 3em;
-        font-size: 0.9em;
+      grid-column: 1;
+      grid-row: 2;
     }
 
     .btns-container {
-        grid-column: 1;
-        grid-row: 3;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
+      margin-top: 3em;
+      grid-column: 1;
+      grid-row: 3;
+      flex-direction: column:
+      padding: 10px;
     }
-
-    .btn {
-        width: 8em;
-        height: 2.5em;
-        font-size: 0.9em;
-    }
-
-    #new-habit {
-        width: 8em;
-        height: 2.5em;
-        font-size: 0.9em;
-    }
+  
 }
