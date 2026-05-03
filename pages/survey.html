@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/survey.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+   <form action="/submit-survey" method="post">
+        <h1>Let's Personalize Your Flow</h1>
+        <p>Answer a few questions to help us understand your needs and preferences. This will allow us to create a personalized experience for you.</p>
+        <h2 class="subtitle" for="age">Personal Information</h2>
+        <label for=""> Birthdate:
+            <input class="date" type="date" id="age" name="age" required>
+        </label>
+        <label for=""> Profession:
+            <select name="profession" id="profession">
+                <option value="student">Student</option>
+                <option value="professional">Professional</option>
+                <option value="other">Other</option>
+            </select>
+        </label>
+        <label for=""> Gender:
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </label>
+        <label for="free-hours">
+            Free hours per day:
+            <input type="number" id="free-hours" name="free_hours" min="0" max="24" required>
+        </label>
+
+        <div class="divisor"></div>
+
+        <h2 class="subtitle" for="interests">What are your interests?</h2>
+        <div class="container intereses">
+            <div class="box interes" id="learn" onclick="seleccionar('learn')">Learning</div>
+            <div class="box interes" id="deporte" onclick="seleccionar('deporte')">Sports</div>
+            <div class="box interes" id="lectura" onclick="seleccionar('lectura')">Reading</div>
+            <div class="box interes" id="weight-loss" onclick="seleccionar('weight-loss')">Weight Loss</div>
+            <div class="box interes" id="muscle-gain" onclick="seleccionar('muscle-gain')">Muscle Gain</div>
+            <div class="box interes" id="low-stress" onclick="seleccionar('low-stress')">Low Stress</div>
+            <div class="box interes" id="financial-freedom" onclick="seleccionar('financial-freedom')">Financial Freedom</div>
+        </div>
+
+        <div class="divisor"></div>
+
+        <h2 class="subtitle" for="weaknesses">What are your weaknesses?</h2>
+        <div class="container weaknesses">
+            <div class="box weakness" id="procrastination" onclick="seleccionar('procrastination')">Procrastination</div>
+            <div class="box weakness" id="disorganization" onclick="seleccionar('disorganization')">Disorganization</div>
+            <div class="box weakness" id="perfectionism" onclick="seleccionar('perfectionism')">Perfectionism</div>
+            <div class="box weakness" id="lack_of_focus" onclick="seleccionar('lack_of_focus')">Lack of Focus</div>
+        </div>
+
+        <div class="divisor"></div>
+
+        <h2 class="subtitle" for="strengths">What are your strengths?</h2>
+        <div class="container strengths">
+            <div class="box strength" id="time_management" onclick="seleccionar('time_management')">Time Management</div>
+            <div class="box strength" id="dicipline" onclick="seleccionar('dicipline')">Discipline</div>
+            <div class="box strength" id="organization" onclick="seleccionar('organization')">Organization</div>
+            <div class="box strength" id="commitment" onclick="seleccionar('commitment')">Commitment</div>
+            <div class="box strength" id="self_control" onclick="seleccionar('self_control')">Self-Control</div>
+        </div>
+
+        <div class="space"></div>
+        <button type="submit" class="submit-btn">Submit Survey</button>
+    </form>
+    <script src="../scripts/survey.js"></script>
+</body>
+</html>

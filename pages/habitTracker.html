@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="../styles/habitTracker.css">
+</head>
+<body>
+    <nav class="banner">
+        <img class="logo-banner" src="../images/logo.png" alt="GoalFlow Logo">
+        <a href="../home.html" aria-label="Go to Home page">Home</a>
+        <a href="#about" aria-label="About section">About</a>
+        <a href="#contact" aria-label="Contact section">Contact</a>
+    </nav>
+    <main class="container">
+        <div class="graphic-container">
+            <div class="text-container">
+                <h1 class="title">Habit Tracker</h1>
+                <label for="graph">Daily Progress</label>
+            </div>
+            <div class="graph">
+                <p class="porcentaje">70%</p>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="habit-checklist">
+            <button class="habit-item">Drink 8 glasses of water daily </button>
+            <button class="habit-item">Exercise for 30 minutes daily </button>
+            <button class="habit-item">Read for 20 minutes daily </button>
+        </div>
+        <div class="divisor"></div>
+        <div class="btns-container">
+            <input type="text" id="new-habit" placeholder="Enter new habit" aria-label="New habit input">
+            <button class="add-habit btn">Add Habit</button>
+            <button class="view-progress btn">View Progress</button>
+        </div>
+    </main>
+    <script src="../scripts/habitTracker.js"></script>
+</body>
+</html>
