@@ -52,7 +52,7 @@ a:hover {
     border-radius: 10px;
     box-shadow: 0 0 10px 1px #0004;
 
-    height: 50rem;
+    height: 40rem;
     max-width: 1200px;
 
     display: grid;
@@ -99,7 +99,7 @@ a:hover {
 
     background-color: #fff;
     width: 100%;
-    font-size: 1.5em; 
+    font-size: 1.3em; 
 
     border: none;
     border-bottom: 1px solid #000;
@@ -109,6 +109,7 @@ a:hover {
 
 .confidence-btn {
     border-bottom: none;
+    border-radius: 0 0 0 10px;
 }
 
 .btn:hover{
@@ -153,8 +154,8 @@ a:hover {
   }
 
   .text-title {
-    font-size: 1.5em;
-    margin-top: 1.2em;
+    font-size: 1.2em;
+    margin-top: 1.4em;
   }
   
   .options {
@@ -179,10 +180,16 @@ a:hover {
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
 
+    color: #000
+
+  }
+
+  .confidence-btn{
+    border-radius: 0;
   }
 
   .btn:hover{
-    font-size: 0.9em;
+    font-size: 0.8em;
    }
 
    .tentations-btn , .confidence-btn {

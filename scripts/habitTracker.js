@@ -61,3 +61,8 @@ addHabitBtn.addEventListener('click', () => {
 // Initial render
 renderHabits();
 
+const viewProgressBtn = document.querySelector(".view-progress")
+
+viewProgressBtn.addEventListener("click", ()=> {
+  window.location.href = "../pages/view-progress.html"
+})
