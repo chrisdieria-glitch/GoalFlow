@@ -9,8 +9,17 @@ function seleccionar(id) {
 
     // Track selections for progress calculation
     if (elemento.classList.contains('interes')) {
+
         if (elemento.classList.contains('seleccionado')) {
-            selectedInterests.add(id);
+            if (selectedInterests.size < 3) {
+                selectedInterests.add(id);
+            } else {
+                // Deselect the last selected interest if more than 3 are selected
+                const lastSelected = Array.from(selectedInterests).pop();
+                document.getElementById(lastSelected).classList.remove('seleccionado');
+                selectedInterests.delete(lastSelected);
+                selectedInterests.add(id);
+            }
         } else {
             selectedInterests.delete(id);
         }
