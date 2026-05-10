@@ -35,7 +35,7 @@ body {
     padding: 1em;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 100%;
     gap: 10px;
@@ -46,8 +46,8 @@ body {
 .habit {
     background-color: #f8f9fa;
     border-radius: 7px;
-    padding: 1em 2em;
-    font-size: 1.2em;
+    padding: 0.5em 1em;
+    font-size: 1em;
     border: 2px solid #667eea;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -79,7 +79,7 @@ body {
 
 .sub-advice {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #333;
     margin-bottom: 1rem;
 }
@@ -108,6 +108,7 @@ body {
 }
 
 .list {
+    width: 80%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -115,7 +116,7 @@ body {
   margin-top: 2em;
   align-items: flex-start;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 

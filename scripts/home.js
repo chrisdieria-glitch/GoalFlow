@@ -3,13 +3,13 @@ const libraryBtn = document.getElementById('library-btn');
 const settingsBtn = document.getElementById('settings-btn');
 
 habitTrackerBtn.addEventListener('click', () => {
-    window.location.href = 'pages/habitTracker.html';
+    window.location.href = 'habitTracker.html';
 });
 
 libraryBtn.addEventListener('click', () => {
-    window.location.href = 'pages/libraryOfProblems.html';
+    window.location.href = 'libraryOfProblems.html';
 });
 
 settingsBtn.addEventListener('click', () => {
-    window.location.href = 'pages/view-progress.html';
+    window.location.href = 'view-progress.html';
 });

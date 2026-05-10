@@ -12,7 +12,7 @@
             <div class="progress-fill" id="progress-fill"></div>
         </div>
     </div>
-   <form action="/submit-survey" method="post">
+   <form method="post">
         <h1>Let's Personalize Your Flow</h1>
         <p>Answer a few questions to help us understand your needs and preferences. This will allow us to create a personalized experience for you.</p>
         <h2 class="subtitle" for="age">Personal Information</h2>
@@ -35,7 +35,7 @@
         </label>
         <label for="free-hours">
             Free hours per day:
-            <input type="number" id="free-hours" name="free_hours" min="0" max="24" required>
+            <input type="number" id="free-hours" name="free_hours" min="0" max="16" required>
         </label>
 
         <div class="divisor"></div>
@@ -58,21 +58,28 @@
 
         <h2 class="subtitle" for="weaknesses">What are your weaknesses?</h2>
         <div class="container weaknesses">
-            <div class="box weakness" id="procrastination" onclick="seleccionar('procrastination')">Procrastination</div>
-            <div class="box weakness" id="disorganization" onclick="seleccionar('disorganization')">Disorganization</div>
-            <div class="box weakness" id="perfectionism" onclick="seleccionar('perfectionism')">Perfectionism</div>
-            <div class="box weakness" id="lack_of_focus" onclick="seleccionar('lack_of_focus')">Lack of Focus</div>
+            <div class="box weakness" id="flash_starter" onclick="seleccionar('flash_starter')">Flash Starter</div>
+            <div class="box weakness" id="inconsistent" onclick="seleccionar('inconsistent')">Inconsistent</div>
+            <div class="box weakness" id="perfection_blocked" onclick="seleccionar('perfection_blocked')">Perfection Blocked</div>
+            <div class="box weakness" id="motivation_dependent" onclick="seleccionar('motivation_dependent')">Motivation Dependent</div>
+            <div class="box weakness" id="environment_blind" onclick="seleccionar('environment_blind')">Environment Blind</div>
+            <div class="box weakness" id="overthinker" onclick="seleccionar('overthinker')">Overthinker</div>
+            <div class="box weakness" id="all_or_nothing" onclick="seleccionar('all_or_nothing')">All or Nothing</div>
+            <div class="box weakness" id="identity_unformed" onclick="seleccionar('identity_unformed')">Identity Unformed</div>
         </div>
 
         <div class="divisor"></div>
 
         <h2 class="subtitle" for="strengths">What are your strengths?</h2>
         <div class="container strengths">
-            <div class="box strength" id="time_management" onclick="seleccionar('time_management')">Time Management</div>
-            <div class="box strength" id="dicipline" onclick="seleccionar('dicipline')">Discipline</div>
-            <div class="box strength" id="organization" onclick="seleccionar('organization')">Organization</div>
-            <div class="box strength" id="commitment" onclick="seleccionar('commitment')">Commitment</div>
-            <div class="box strength" id="self_control" onclick="seleccionar('self_control')">Self-Control</div>
+            <div class="box strength" id="consistency_builder" onclick="seleccionar('consistency_builder')">Consistency Builder</div>
+            <div class="box strength" id="system_thinker" onclick="seleccionar('system_thinker')">System Thinker</div>
+            <div class="box strength" id="self_disciplined" onclick="seleccionar('self_disciplined')">Self Disciplined</div>
+            <div class="box strength" id="focused_executer" onclick="seleccionar('focused_executer')">Focused Executor</div>
+            <div class="box strength" id="resilient" onclick="seleccionar('resilient')">Resilient</div>
+            <div class="box strength" id="goal_driven" onclick="seleccionar('goal_driven')">Goal Driven</div>
+            <div class="box strength" id="identity_based" onclick="seleccionar('identity_based')">Identity Based</div>
+            <div class="box strength" id="adaptive_mindset" onclick="seleccionar('adaptive_mindset')">Adaptive Mindset</div>
         </div>
 
         <div class="space"></div>

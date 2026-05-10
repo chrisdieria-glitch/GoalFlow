@@ -4,19 +4,21 @@ const percentageText = document.querySelector('.porcentaje');
 const addHabitBtn = document.querySelector('.add-habit');
 const newHabitInput = document.getElementById('new-habit');
 
-// Load habits from localStorage
-let habits = JSON.parse(localStorage.getItem('habits')) || [
-    'Drink 8 glasses of water daily',
-    'Exercise for 30 minutes daily',
-    'Read for 20 minutes daily'
-];
-
-// Save habits to localStorage
-function saveHabits() {
-    localStorage.setItem('habits', JSON.stringify(habits));
+// Load habits from surveyHabits and fall back to defaults if needed
+let habits = JSON.parse(localStorage.getItem('surveyHabits'));
+if (!Array.isArray(habits) || habits.length === 0) {
+    habits = [
+        'Drink 8 glasses of water daily',
+        'Exercise for 30 minutes daily',
+        'Read for 20 minutes daily'
+    ];
+    localStorage.setItem('surveyHabits', JSON.stringify(habits));
 }
 
-// Render habits
+function saveHabits() {
+    localStorage.setItem('surveyHabits', JSON.stringify(habits));
+}
+
 function renderHabits() {
     habitChecklist.innerHTML = '';
     habits.forEach((habit, index) => {
@@ -30,7 +32,7 @@ function renderHabits() {
         button.addEventListener('click', () => {
             button.classList.toggle('completed');
             const completed = button.classList.contains('completed');
-            localStorage.setItem(`habit-${index}`, completed);
+            localStorage.setItem(`habit-${index}`, completed ? 'true' : 'false');
             updateProgress();
         });
         habitChecklist.appendChild(button);
@@ -47,7 +49,6 @@ function updateProgress() {
     percentageText.textContent = `${Math.round(progressPercent)}%`;
 }
 
-// Add new habit
 addHabitBtn.addEventListener('click', () => {
     const newHabit = newHabitInput.value.trim();
     if (newHabit) {
@@ -58,11 +59,9 @@ addHabitBtn.addEventListener('click', () => {
     }
 });
 
-// Initial render
+const viewProgressBtn = document.querySelector('.view-progress');
+viewProgressBtn.addEventListener('click', () => {
+    window.location.href = '../pages/view-progress.html';
+});
+
 renderHabits();
-
-const viewProgressBtn = document.querySelector(".view-progress")
-
-viewProgressBtn.addEventListener("click", ()=> {
-  window.location.href = "../pages/view-progress.html"
-})
