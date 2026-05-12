@@ -48,12 +48,12 @@ a:hover {
     margin: auto;
     margin-top: 4em;
     width: 90%;
-    height: 35rem;
+    height: auto;
     padding: 1rem;
     
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 60% 40%;
+    grid-template-rows: auto 40%;
 
     background-color: #fff;
     border-radius: 10px;
@@ -227,8 +227,7 @@ label {
       margin-top: 90px;
       grid-template-columns: 1fr;
       grid-template-rows: 400px auto 250px;
-      height: 900px;
-      
+      height: auto;
     }
 
     .graphic-container{
@@ -257,6 +256,11 @@ label {
     .habit-checklist {
       grid-column: 1;
       grid-row: 2;
+    }
+
+    .habit-item {
+        width: 80%;
+        margin: 0.5em 0;
     }
 
     .btns-container {

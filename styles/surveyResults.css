@@ -124,4 +124,35 @@ body {
   font-size: 1.5em;
 }
 
+@media (max-width: 600px) {
+    .results-container {
+        width: 90%;
+        padding: 1em;
+    }
 
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle-habits {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    .list {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0.5em;
+        font-size: 0.7em;
+    }
+
+    .sub-advice {
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .habit {
+        font-size: 0.9em;
+        padding: 0.5em 0.5em;
+    }
+}

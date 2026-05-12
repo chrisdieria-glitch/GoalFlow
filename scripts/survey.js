@@ -46,12 +46,9 @@ function updateProgress() {
     let completedSections = 0;
 
     // Check personal info
-    const age = document.getElementById('age').value;
-    const profession = document.getElementById('profession').value;
-    const gender = document.getElementById('gender').value;
     const freeHours = document.getElementById('free-hours').value;
 
-    if (age && profession && gender && freeHours) {
+    if (freeHours) {
         completedSections++;
     }
 
@@ -80,9 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.querySelector('.submit-btn');
 
     // Add input event listeners for real-time progress updates
-    document.getElementById('age').addEventListener('change', updateProgress);
-    document.getElementById('profession').addEventListener('change', updateProgress);
-    document.getElementById('gender').addEventListener('change', updateProgress);
     document.getElementById('free-hours').addEventListener('input', updateProgress);
 
     // Form submission with loading state

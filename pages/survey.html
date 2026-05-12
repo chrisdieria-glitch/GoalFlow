@@ -15,26 +15,10 @@
    <form method="post">
         <h1>Let's Personalize Your Flow</h1>
         <p>Answer a few questions to help us understand your needs and preferences. This will allow us to create a personalized experience for you.</p>
-        <h2 class="subtitle" for="age">Personal Information</h2>
-        <label for=""> Birthdate:
-            <input class="date" type="date" id="age" name="age" required>
-        </label>
-        <label for=""> Profession:
-            <select name="profession" id="profession">
-                <option value="student">Student</option>
-                <option value="professional">Professional</option>
-                <option value="other">Other</option>
-            </select>
-        </label>
-        <label for=""> Gender:
-            <select name="gender" id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-        </label>
         <label for="free-hours">
-            Free hours per day:
+            <p class="subtitle">
+                Free hours per day
+            </p>
             <input type="number" id="free-hours" name="free_hours" min="0" max="16" required>
         </label>
 

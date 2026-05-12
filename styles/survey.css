@@ -42,9 +42,11 @@ p {
 }
 
 label {
+    text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #34495e;
+    line-height: 1.5em;
+    color: #000;
     margin-bottom: 0.5em;
     display: block;
 }
@@ -77,6 +79,10 @@ input:focus, select:focus {
     position: relative;
 }
 
+label .subtitle {
+    line-height: 1em;
+}
+
 .subtitle::after {
     content: '';
     position: absolute;
@@ -88,6 +94,7 @@ input:focus, select:focus {
     background: linear-gradient(90deg, #667eea, #764ba2);
     border-radius: 2px;
 }
+
 
 #age {
     width: 100%;
@@ -282,4 +289,35 @@ input:focus, select:focus {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 80vw;
+    }
+
+    h1 {
+        margin: 0.5em 0 0 0;
+    }
+
+    p {
+       margin-bottom: 0em;
+       font-size: 1em; 
+    }
+    .container {
+        grid-template-columns: 50% 50%;
+        gap: 0.5rem
+    }
+
+    .box {
+        padding: 0.7em;
+        font-size: 0.8em;
+        width: 85%;
+    }
+
+    .submit-btn {
+        width: 70%;
+        font-size: 1em;
+        margin-top: 0;
+    }
 }

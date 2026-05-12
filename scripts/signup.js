@@ -8,6 +8,6 @@ button.addEventListener("submit", (e) => {
 
 const signedup = JSON.parse(localStorage.getItem("signedup"));
 
-if (signedup == true) {
-  window.location.href = "pages/home.html";
-}
+// if (signedup == true) {
+//   window.location.href = "pages/home.html";
+// }

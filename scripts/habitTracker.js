@@ -65,3 +65,8 @@ viewProgressBtn.addEventListener('click', () => {
 });
 
 renderHabits();
+
+const habitItems = document.querySelectorAll('.habit-item');
+
+habitItems.forEach(item => {
+});

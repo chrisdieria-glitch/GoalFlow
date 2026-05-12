@@ -152,8 +152,8 @@ function selectHabits() {
   }
   for (let habit of habits) {
     if (habit[1] !== undefined) {
-      habitsToDo.push(`${habit[0]} for ${habit[1]} minutes`);
-    }
+        habitsToDo.push(`${habit[0]} for ${habit[1]} minutes`);
+      }
     else {
       habitsToDo.push(`${habit[0]}`);
     }
