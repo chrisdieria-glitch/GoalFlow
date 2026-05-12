@@ -135,7 +135,7 @@ function selectHabits() {
       }
     }
   }
-  else if (time > 3 && time < 6) {
+  else {
     for (let goals of selectGoals) {
       for (let habit of goals) {
         if (habit[1] == 1) {
