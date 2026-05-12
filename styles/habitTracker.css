@@ -89,6 +89,9 @@ a:hover {
 
     color: black;
     transition: transform 0.2s ease, opacity 0.2s ease;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .habit-item-container.edit-active .habit-item {

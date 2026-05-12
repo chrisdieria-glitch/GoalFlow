@@ -24,9 +24,23 @@ function saveHabits() {
     localStorage.setItem('surveyHabits', JSON.stringify(habits));
 }
 
+function isMobileDevice() {
+    return window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+}
+
+function clearMobileEditStates() {
+    document.querySelectorAll('.habit-item-container.edit-active').forEach((item) => {
+        item.classList.remove('edit-active');
+    });
+}
+
 function renderHabits() {
     habitChecklist.innerHTML = '';
     habits.forEach((habit, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'habit-item-container';
+        if (editMode) wrapper.classList.add('edit-active');
+
         const button = document.createElement('button');
         button.className = 'habit-item';
         button.textContent = habit;
@@ -34,8 +48,51 @@ function renderHabits() {
         if (isCompleted) {
             button.classList.add('completed');
         }
-        button.addEventListener('click', () => {
-            if (editMode) return;
+
+        let mobilePressTimer = null;
+        let mobilePressTriggered = false;
+
+        button.addEventListener('pointerdown', (event) => {
+            if (event.pointerType === 'touch' && isMobileDevice()) {
+                event.preventDefault();
+                mobilePressTriggered = false;
+                mobilePressTimer = setTimeout(() => {
+                    mobilePressTriggered = true;
+                    clearMobileEditStates();
+                    wrapper.classList.add('edit-active');
+                }, 1000);
+            }
+        });
+
+        button.addEventListener('pointerup', (event) => {
+            clearTimeout(mobilePressTimer);
+            if (mobilePressTriggered) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        });
+
+        button.addEventListener('contextmenu', (event) => {
+            if (isMobileDevice()) {
+                event.preventDefault();
+            }
+        });
+
+        button.addEventListener('pointerleave', () => {
+            clearTimeout(mobilePressTimer);
+        });
+
+        button.addEventListener('pointercancel', () => {
+            clearTimeout(mobilePressTimer);
+        });
+
+        button.addEventListener('click', (event) => {
+            if (editMode || mobilePressTriggered) {
+                mobilePressTriggered = false;
+                event.preventDefault();
+                event.stopPropagation();
+                return;
+            }
             button.classList.toggle('completed');
             const completed = button.classList.contains('completed');
             localStorage.setItem(`habit-${index}`, completed ? 'true' : 'false');
@@ -78,9 +135,6 @@ function renderHabits() {
         actions.appendChild(editBtn);
         actions.appendChild(deleteBtn);
 
-        const wrapper = document.createElement('div');
-        wrapper.className = 'habit-item-container';
-        if (editMode) wrapper.classList.add('edit-active');
         wrapper.appendChild(button);
         wrapper.appendChild(actions);
         habitChecklist.appendChild(wrapper);
@@ -140,6 +194,9 @@ container.addEventListener('pointerup', (event) => {
     const interactive = event.target.closest('.habit-action-btn, .add-habit, .view-progress, #new-habit, a, input, button');
     if (editMode && !interactive) {
         setEditMode(false);
+    }
+    if (!editMode && !interactive) {
+        clearMobileEditStates();
     }
 });
 
